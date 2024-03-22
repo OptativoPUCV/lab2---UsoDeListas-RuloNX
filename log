@@ -1,0 +1,18 @@
+Fri 22 Mar 2024 12:08:19 AM UTC: 
+ exercises.c | 39 ++++++++++++++++++++++++++++++++++++++-
+ 1 file changed, 38 insertions(+), 1 deletion(-)
+In file included from test.c:5:
+exercises.c: In function ‘eliminaElementos’:
+exercises.c:88:13: error: comparison between pointer and integer [-Werror]
+   88 |     if(dato == elem){
+      |             ^~
+exercises.c: In function ‘copia_pila’:
+exercises.c:106:11: error: implicit declaration of function ‘is_empty’ [-Werror=implicit-function-declaration]
+  106 |   while (!is_empty(P1)) {
+      |           ^~~~~~~~
+exercises.c:115:3: error: implicit declaration of function ‘destroy_stack’ [-Werror=implicit-function-declaration]
+  115 |   destroy_stack(auxStack);
+      |   ^~~~~~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+fdc8a19
