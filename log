@@ -39,3 +39,13 @@ Fri 22 Mar 2024 12:18:15 AM UTC:
  tests:  1|4
 total_score: 10/70
 54410c9
+Fri 22 Mar 2024 10:00:00 PM UTC: 
+ exercises.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:5:
+exercises.c:9:10: fatal error: exercises.h: No such file or directory
+    9 | #include "exercises.h"
+      |          ^~~~~~~~~~~~~
+compilation terminated.
+Compilation failed
+b43dfb8
