@@ -85,7 +85,7 @@ void eliminaElementos(List*L, int elem){
 
   dato = (int*)first(L);
   while(dato != NULL) {
-    if(dato == elem){
+    if(*dato == elem){
      dato =  (int*)popCurrent(L);
     } 
     else {
@@ -103,16 +103,15 @@ Puedes usar una pila auxiliar.
 
 void copia_pila(Stack* P1, Stack* P2) {
   Stack* auxStack = create_stack();
-  while (!is_empty(P1)) {
+  while (P1 == NULL) {
     void* data = pop(P1);
     push(P2, data);
     push(auxStack, data);
   }
-  while (!is_empty(auxStack)) {
+  while (auxStack == NULL) {
     void* data = pop(auxStack);
     push(P1, data);
   }
-  destroy_stack(auxStack);
 }
 
 /*
