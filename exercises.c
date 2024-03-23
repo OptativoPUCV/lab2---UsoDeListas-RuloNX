@@ -99,12 +99,12 @@ Puedes usar una pila auxiliar.
 
 void copia_pila(Stack* P1, Stack* P2) {
   Stack* auxStack = create_stack();
-  while (P1 == NULL) {
+  while (P1 != NULL) {
     void* data = pop(P1);
     push(P2, data);
     push(auxStack, data);
   }
-  while (auxStack == NULL) {
+  while (auxStack != NULL) {
     void* data = pop(auxStack);
     push(P1, data);
   }
@@ -120,23 +120,23 @@ paraéntesis balanceados. Retorna 1 si están balanceados,
 int parentesisBalanceados(char *cadena) {
   Stack* stack = create_stack();
   char c;
+  
   for (int i = 0; i < strlen(cadena); i++) {
     c = cadena[i];
     if (c == '(') {
       push(stack, (void*)&c);
     } 
     else if (c == ')') {
-      if (stack == NULL || *(char*)pop(stack) != '(') {
+      if (isEmpty(stack) || *(char*)pop(stack) != '(') {
         return 0;
       }
     }
   }
 
-  if (stack == NULL) {
+  if (isEmpty(stack)) {
     return 1;
   } 
   else {
     return 0;
   }
 }
-
