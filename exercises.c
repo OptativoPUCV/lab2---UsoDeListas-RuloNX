@@ -126,9 +126,9 @@ int parentesisBalanceados(char *cadena) {
     for (int i = 0; i < strlen(cadena); i++) {
         c = cadena[i];
         if (c == '(') {
-            push(stack, c); // Almacena el carácter directamente en la pila
+            push(stack, (void*)&c);
         } else if (c == ')') {
-            if (get_size(stack) == 0 || pop(stack) != '(') {
+            if (get_size(stack) == 0 || *((char*)pop(stack)) != '(') {
                 return 0;
             }
         }
@@ -140,7 +140,3 @@ int parentesisBalanceados(char *cadena) {
         return 0;
     }
 }
-
-
-
-
