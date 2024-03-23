@@ -188,3 +188,9 @@ exercises.c:108:11: error: implicit declaration of function ‘is_empty’ [-Wer
 cc1: all warnings being treated as errors
 Compilation failed
 409acd8
+Sat 23 Mar 2024 05:29:37 PM UTC: 
+ exercises.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  4|1
+total_score: 50/70
+653f1c1
