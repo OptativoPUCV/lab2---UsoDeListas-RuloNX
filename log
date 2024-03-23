@@ -137,3 +137,14 @@ exercises.c:102:11: error: implicit declaration of function ‘is_empty’ [-Wer
 cc1: all warnings being treated as errors
 Compilation failed
 bd62a99
+Sat 23 Mar 2024 05:10:17 PM UTC: 
+ exercises.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+In file included from test.c:5:
+exercises.c: In function ‘copia_pila’:
+exercises.c:102:11: error: implicit declaration of function ‘stack_is_empty’ [-Werror=implicit-function-declaration]
+  102 |   while (!stack_is_empty(P1)) {
+      |           ^~~~~~~~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+31695a6
