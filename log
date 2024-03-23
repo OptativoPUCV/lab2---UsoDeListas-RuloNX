@@ -106,3 +106,13 @@ exercises.c:130:11: error: implicit declaration of function ‘isEmpty’ [-Werr
 cc1: all warnings being treated as errors
 Compilation failed
 4fb38c8
+Sat 23 Mar 2024 05:05:09 PM UTC: 
+ exercises.c | 11 ++++++++---
+ 1 file changed, 8 insertions(+), 3 deletions(-)
+In file included from test.c:5:
+exercises.c: In function ‘parentesisBalanceados’:
+exercises.c:135:16: error: invalid use of incomplete typedef ‘Stack’ {aka ‘List’}
+  135 |       if (stack->size == 0) {
+      |                ^~
+Compilation failed
+fe13908
