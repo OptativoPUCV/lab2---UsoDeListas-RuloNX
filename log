@@ -257,3 +257,26 @@ test.c:217:9: error: implicit declaration of function ‘parentesisBalanceados�
 cc1: all warnings being treated as errors
 Compilation failed
 c6bf92b
+Sat 23 Mar 2024 05:39:56 PM UTC: 
+ exercises.c | 12 +++++-------
+ 1 file changed, 5 insertions(+), 7 deletions(-)
+In file included from test.c:5:
+exercises.c: In function ‘verifica_balanceo’:
+exercises.c:128:31: error: passing argument 2 of ‘push’ makes pointer from integer without a cast [-Werror=int-conversion]
+  128 |             push(stack, cadena[i]); // Almacena el carácter directamente en la pila
+      |                         ~~~~~~^~~
+      |                               |
+      |                               char
+In file included from exercises.c:7,
+                 from test.c:5:
+stack.h:11:31: note: expected ‘void *’ but argument is of type ‘char’
+   11 | void push(Stack *stack, void *data) { pushFront(stack, data); }
+      |                         ~~~~~~^~~~
+test.c: In function ‘test_parentesis_balanceados’:
+test.c:217:9: error: implicit declaration of function ‘parentesisBalanceados’; did you mean ‘test_parentesis_balanceados’? [-Werror=implicit-function-declaration]
+  217 |     if(!parentesisBalanceados(s)){
+      |         ^~~~~~~~~~~~~~~~~~~~~
+      |         test_parentesis_balanceados
+cc1: all warnings being treated as errors
+Compilation failed
+9264d0a
