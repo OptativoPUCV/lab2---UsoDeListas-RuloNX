@@ -42,8 +42,8 @@ Al finalizar retorna la lista creada.
 */
 
 List* crea_lista() {
-   List* L = create_list();
-   return L;
+  List* L = create_list();
+  return L;
   for (int i = 1; i <= 10; i++){
     int* element = (int*)malloc(sizeof(int));
     *element = i;
@@ -122,23 +122,23 @@ paraéntesis balanceados. Retorna 1 si están balanceados,
 */
 
 int parentesisBalanceados(char *cadena) {
-  Stack* stack = create_stack();
-  char c;
-  
-  for (int i = 0; i < strlen(cadena); i++) {
-    c = cadena[i];
-    if (c == '(') {
-      push(stack, (void*)&c);
-    } else if (c == ')') {
-      if (get_size(stack) == 0 || *((char*)pop(stack)) != '(') {
+  int balance = 0;
+  char *pila = malloc(strlen(cadena) + 1); 
+
+  while (*cadena != '\0') {
+    if (*cadena == '(' || *cadena == '[' || *cadena == '{') {
+      pila[balance++] = *cadena;
+    } 
+    else if (*cadena == ')' || *cadena == ']' || *cadena == '}') {
+      if (balance == 0 || (*cadena == ')' && pila[balance - 1] != '(') || (*cadena == ']' && pila[balance - 1] != '[') || (*cadena == '}' && pila[balance - 1] != '{')) {
+        free(pila);
         return 0;
       }
+      balance--;
     }
+    cadena++;
   }
-  
-  if (get_size(stack) == 0) {
-    return 1;
-  } else {
-    return 0;
-  }
+
+  free(pila);
+  return (balance == 0);
 }
