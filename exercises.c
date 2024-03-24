@@ -43,13 +43,15 @@ Al finalizar retorna la lista creada.
 
 List* crea_lista() {
    List* L = create_list();
-   for (int i = 1; i <= 10; i++){
-     int* element = (int*)malloc(sizeof(int));
-     *element = i;
-     pushBack(L, element);
+   return L;
+  for (int i = 1; i <= 10; i++){
+    int* element = (int*)malloc(sizeof(int));
+    *element = i;
+    pushBack(L, element);
   }
   return L;
 }
+
 
 /*
 Ejercicio 2.
@@ -140,6 +142,3 @@ int parentesisBalanceados(char *cadena) {
     return 0;
   }
 }
-
-
-
